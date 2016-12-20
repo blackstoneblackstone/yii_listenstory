@@ -1,0 +1,24 @@
+<div class="animated fadeInRight">
+    <div class="row alert alert-success" style="height: 100px;font-size: 20px;padding-top: 10px;">
+        告诉孩子您的播放密码<br><label class="label label-success" style="font-size: 20px" ng-model="pwd" ng-bind="pwd"></label>
+    </div>
+    <ul class="">
+        <li id="st-{{story.id}}" style="height: 90px;border-bottom:solid #fdf9f4 2px;" ng-repeat="story in stories"
+            ng-model="stories">
+            <div class="col-xs-3">
+                <img style="height: 70px;margin-top:5px;width: 80px;border: solid #cccccc 2px" class="paper-1"
+                     ng-src="{{story.img}}">
+            </div>
+            <div class="col-xs-7" style="text-align: left;margin-top: 10px">
+                <div style="font-size: 18px">{{story.name}}</div>
+                <div style="margin-top: 10px;color: #c2e593"><i class="glyphicon glyphicon-play"></i>{{story.playnum}}
+                    <i class="glyphicon glyphicon-time" style="margin-left: 30px"></i>{{story.duration}}
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <i ng-click="del(story.id)" class="glyphicon glyphicon-trash"
+                   style="color:#e5e154;font-size: 20px;margin-top: 20px"></i>
+            </div>
+        </li>
+    </ul>
+</div>

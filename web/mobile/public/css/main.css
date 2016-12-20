@@ -1,0 +1,95 @@
+/*@font-face {*/
+/*font-family: "katong";*/
+/*src: url("../fonts/kt.TTF");*/
+/*}*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Lantinghei SC, Open Sans, Arial, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeiti, WenQuanYi Micro Hei, SimSun, sans-serif;
+    text-align: center;
+    background-color: #fdf9f4;
+}
+
+ul li {
+    list-style: none;
+}
+
+i {
+    margin: 5px;
+}
+
+.container {
+    margin: 0 10px;
+}
+
+.row {
+    background-color: #ffffff;
+    font-family: Lantinghei SC, Open Sans, Arial, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeiti, WenQuanYi Micro Hei, SimSun, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    clear: both;
+}
+
+.un-active {
+    -webkit-filter: grayscale(1); /* Webkit */
+    filter: "gray"; /* IE6-9 */
+    filter: grayscale(1); /* W3C */
+}
+
+.storyDetail {
+    position: absolute;
+    bottom: 80px;
+    top: 0;
+    left: 15px;
+    right: 15px;
+    /*background-color: rgba(253,225,239,0.8);*/
+}
+.storyDetail i{
+    font-size: 25px;
+}
+hr{
+    margin-top: 0;
+}
+.con{
+    margin-bottom: 80px;
+}
+.paper{
+    color: rgba(0, 0, 0, 0.870588);
+    background-color: #fff;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.247059) 0px 12px 78px, rgba(0, 0, 0, 0.219608) 0px 10px 50px;
+    border-radius: 2px;
+    text-align: center;
+    display: inline-block;
+}
+.paper-1{
+    color: rgba(0, 0, 0, 0.870588);
+    background-color: #fff;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px;
+    border-radius: 2px;
+    text-align: center;
+    display: inline-block;
+}
+a{
+    color: #1a1a1a;
+}
+.banner{
+    height: 200px;
+}
+.img-bg{
+    background-color: #f2f2f2;
+}

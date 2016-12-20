@@ -1,0 +1,26 @@
+<img src="public/img/topbg.jpg" style="margin-bottom: 10px;width:100%;">
+<a href="#/myStoryDetail/{{story.id}}" ng-repeat="story in stories" ng-model="stories">
+    <li class="paper-1" id="st-{{story.id}}"
+        style="width: 48%;margin-left: 2%;margin-top:20px;float:left;margin-top:5px;height: 300px;margin-right:0px;border-bottom:solid #fdf9f4 5px;">
+        <img style="height: 250px;margin-top:5px;width: 100%;border: solid #F2f2f2 2px" ng-src="{{story.img}}">
+        <div style="font-size: 18px;margin-top: 10px">{{story.name}}
+        </div>
+    </li>
+</a>
+
+<div class="js_dialog" id="pwdDialog">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">输入密码</strong></div>
+        <div class="weui-dialog__bd">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <input id="pwd" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入密码">
+                </div>
+            </div>
+        </div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" id="pwdConfirm" class="weui-dialog__btn weui-dialog__btn_primary">听故事啦</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+.an-view.ng-enter {
+    -webkit-animation-name: fadeInLeftBig;
+    animation-name: fadeInLeftBig;
+}
+
+.an-view.ng-leave {
+    -webkit-animation-name: fadeOutLeftBig;
+    animation-name: fadeOutLeftBig;
+}
+
+.an-cricle {
+    animation: rotate 30s infinite linear;
+    -webkit-animation: rotate 30s infinite linear;
+}
+
+.an-cricle.play {
+    animation: rotate 4s infinite linear;
+    -webkit-animation: rotate 30s infinite linear;
+}
+
+.an-cricle.pause {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+#btnLu2 {
+    animation: lu 1s infinite linear;
+    -webkit-animation: lu 1s infinite linear;
+}
+
+@-webkit-keyframes lu {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes lu {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}

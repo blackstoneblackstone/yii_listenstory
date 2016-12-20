@@ -1,0 +1,77 @@
+<div class="storyDetail animated fadeInUp">
+
+    <button class="btn-success" ng-click="starStory(story.id)"
+            style="position: absolute;border:solid #FEA 2px;border-radius:50%;height:40px;width:40px;right: 20px;top:20px;">
+        <i style="font-size: 16px" class="glyphicon glyphicon-star"></i>
+    </button>
+    <span style="position: absolute;right: 5px;top:65px">讲给孩子听</span>
+    <div style="margin-top: 50px;height:300px;background: url('public/img/yybw.png') no-repeat center;background-size: 240px 240px; ">
+        <img id="playImg" style="border: solid #cccccc 2px;height: 200px;width:200px;margin-top: 50px;"
+             src="{{story.img}}" alt=""
+             class="img-circle img-bg">
+        <div style="position: absolute;top: 160px;left: 0;right: 0;text-align: center">
+            <img src="public/img/play.png" ng-click="play()" id="btnPlay" class="img-bg"
+                 style="border-radius:50%;height:80px;margin-left: auto;margin-right: auto;display: none;">
+            <img src="public/img/pause.png" ng-click="pause()" id="btnPause" class="img-bg"
+                 style="border-radius:50%;height:80px;margin-left: auto;margin-right: auto;display: none;">
+        </div>
+    </div>
+    <div style="margin-bottom: 50px">
+        <label id="sdTime" class="label label-info">{{story.duration}}</label>
+        <div style="font-size: 20px;margin-top: 20px">{{story.name}}</div>
+    </div>
+    <button type="button" class="btn btn-default" ng-click="piantou()">
+        <span id="addPT">加片头</span>
+        <span class="glyphicon glyphicon-log-in"></span>
+    </button>
+    <button type="button" class="btn btn-default" ng-click="pianwei()">
+        <span class="glyphicon glyphicon-log-out"></span>
+        <span id="addPW">加片尾</span>
+    </button>
+    <hr>
+    <div style="text-align: center;width: 100%;">
+        <a id="recordPT" class="weui-btn weui-btn_plain-primary" style="display:none;width: 60%" ng-click="recordPT()">播放片头</a>
+        <a id="recordPW" class="weui-btn weui-btn_plain-primary" style="width: 60%;display:none;" ng-click="recordPW()">播放片尾</a>
+    </div>
+
+    <div id="lu" class="row paper animated fadeInUp"
+         style="display:none;z-index:10000;height: 400px;position: absolute;bottom: -80px;left: 0;right: 0;">
+        <span ng-click="close()" class="glyphicon glyphicon-remove-circle"
+              style="color:#f44336;font-size: 30px;float: right;margin: 20px"></span>
+
+        <div class="row" style="position: absolute;width:100%;top: 80px;font-size: 20px;margin: 0 auto">在<span
+                style="color: #e64340" id="textPlace">故事开头</span>加入妈妈的声音<br>让孩子感受到浓浓的母爱
+        </div>
+
+        <div id="recordPlay" style="position: absolute;top: 180px;display: none;left: 100px;">
+            <a style="font-size:18px;" class="weui-btn weui-btn_mini weui-btn_default" ng-click="recordPlay()">
+                播放
+            </a>
+        </div>
+        <div id="recordStop" style="position: absolute;top: 180px;display: none;left: 100px;">
+            <a style="font-size:18px;" class="weui-btn weui-btn_mini weui-btn_default" ng-click="recordStop()">
+                停止
+            </a>
+        </div>
+        <div id="recordUp"
+             style="position: absolute;top: 180px;display: none;right: 100px;border-radius: 50%">
+            <a style="font-size:18px;" class="weui-btn weui-btn_mini weui-btn_primary" ng-click="recordUp()">
+                上传
+            </a>
+        </div>
+
+        <img id="btnLu1" ng-click="ptlStart()" src="public/img/lu1.png"
+             style="position: absolute;left: 40%;height: 70px;bottom: 30px;">
+        <img id="btnLu2" ng-click="ptlStop()" src="public/img/lu1.png"
+             style="position: absolute;left: 40%;height: 75px;bottom: 30px;display: none">
+    </div>
+
+    <div id="djs" class="row"
+         style="font-size: 30px;color: #fff552;z-index:10010;left: 0px;right: 0px;display:none;bottom: 70px;background-color: rgba(0,0,0,.8);position: absolute;top: 0px;padding-top: 150px">
+        正在录音...
+        <br>
+        只能录音60秒
+        <br>
+        <span id="recordTime" style="color: #ffffff;font-size: 60px;font-weight: bolder"></span>
+    </div>
+</div>

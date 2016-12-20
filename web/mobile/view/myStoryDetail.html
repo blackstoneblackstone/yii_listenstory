@@ -1,0 +1,77 @@
+<div class="storyDetail animated fadeInUp">
+
+    <!--<i class="glyphicon glyphicon-align-left" style="color:#e5e154;position: absolute;right: 20px;top:20px;" ng-click="showPlayer()"></i>-->
+    <div style="margin-top: 50px;height:300px;background: url('public/img/yybw.png') no-repeat center;background-size: 240px 240px; ">
+        <img id="playImg" style="border: solid #cccccc 2px;height: 200px;width:200px;margin-top: 50px;"
+             ng-src="{{story.img}}" alt=""
+             class="img-circle img-bg">
+        <div style="position: absolute;top: 160px;left: 0;right: 0;text-align: center">
+            <img src="public/img/play.png" ng-click="play()" id="btnPlay" class="img-bg"
+                 style="border-radius:50%;height:80px;margin-left: auto;margin-right: auto;display: none;">
+            <img src="public/img/pause.png" ng-click="pause()" id="btnPause" class="img-bg"
+                 style="border-radius:50%;height:80px;margin-left: auto;margin-right: auto;display: none;">
+        </div>
+    </div>
+    <div style="margin-bottom: 50px">
+        <label id="sdTime" class="label label-info" ng-model="story.duration">{{story.duration}}</label>
+        <div style="font-size: 20px;margin-top: 20px">{{story.name}}</div>
+    </div>
+
+    <div id="container">
+        <section id="content_main">
+            <article>
+                <div id="jquery_jplayer_1" class="jp-jplayer" style="width: 0px; height: 0px;"><img id="jp_poster_0"
+                                                                                                    style="width: 0px; height: 0px; display: none;">
+                    <audio id="jp_audio_0" preload="metadata"></audio>
+                </div>
+                <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                    <div class="jp-type-single">
+                        <div class="jp-gui jp-interface">
+                            <div class="jp-volume-controls">
+                                <button class="jp-mute" role="button" tabindex="0">mute</button>
+                                <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+                                <div class="jp-volume-bar">
+                                    <div class="jp-volume-bar-value" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div class="jp-controls-holder">
+                                <div class="jp-controls">
+                                    <button class="jp-play" role="button" tabindex="0">play</button>
+                                    <button class="jp-stop" role="button" tabindex="0">stop</button>
+                                </div>
+                                <div class="jp-progress">
+                                    <div class="jp-seek-bar" style="height:10px;background-color: #ffffff;width: 100%;">
+                                        <div class="jp-play-bar" style="height:8px;background-color: #ff6666;width: 26.1889%;"></div>
+                                    </div>
+                                </div>
+                                <div class="jp-current-time" role="timer" aria-label="time">00:54</div>
+                                <div class="jp-duration" role="timer" aria-label="duration">-02:32</div>
+                                <div class="jp-toggles">
+                                    <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jp-details">
+                            <div class="jp-title" aria-label="title">test1或者小城大事</div>
+                        </div>
+                        <div class="jp-no-solution" style="display: none;">
+                            <span>没有</span>
+                            To play the media you will need to either update your browser to a recent version or update your
+                            <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <div class="alert alert-success animated fadeInUpBig" id="sayText1" style="margin-left:20%;width:60%;display: none">
+        故事开头,妈妈想对你说...
+    </div>
+    <div class="alert alert-info animated fadeInUpBig" id="sayText2" style="margin-left:20%;width:60%;display: none">
+        故事开始,小朋友认真听奥...
+    </div>
+    <div class="alert alert-warning animated fadeInUpBig" id="sayText3" style="margin-left:20%;width:60%;display: none">
+        故事结束了,妈妈再来叮嘱几句,晚安,宝贝
+    </div>
+</div>
