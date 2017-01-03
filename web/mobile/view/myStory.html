@@ -1,24 +1,92 @@
-<div class="animated fadeInRight">
-    <div class="row alert alert-success" style="height: 100px;font-size: 20px;padding-top: 10px;">
-        告诉孩子您的播放密码<br><label class="label label-success" style="font-size: 20px" ng-model="pwd" ng-bind="pwd"></label>
-    </div>
-    <ul class="">
-        <li id="st-{{story.id}}" style="height: 90px;border-bottom:solid #fdf9f4 2px;" ng-repeat="story in stories"
-            ng-model="stories">
-            <div class="col-xs-3">
-                <img style="height: 70px;margin-top:5px;width: 80px;border: solid #cccccc 2px" class="paper-1"
-                     ng-src="{{story.img}}">
+<div class="animated fadeIn" style="margin-top: 10px;min-height: 450px">
+
+    <div>
+        <div class="" style="font-size: 20px;padding-top: 20px;border:dashed 2px #b9ff8e">
+            告诉孩子你们的专属播放密码<br>
+            <label style="font-size: 20px;font-weight: bolder;color: red" ng-model="pwd" ng-bind="pwd"></label>
+            <div style="border:dashed darkred 1px; color:darkred; font-size: 12px;text-align: left;margin: 20px;padding: 10px">
+                孩子如何听故事：<br>
+                1、关注微信公众号“熊猫兔听故事”<br>
+                2、点击“熊猫兔听故事”公众号左下方的“亲子互动”－“听妈妈讲故事”<br>
+                3、输入你们的专属播放密码，孩子就可以收听妈妈为ta定制的专属故事啦<br>
             </div>
-            <div class="col-xs-7" style="text-align: left;margin-top: 10px">
-                <div style="font-size: 18px">{{story.name}}</div>
-                <div style="margin-top: 10px;color: #c2e593"><i class="glyphicon glyphicon-play"></i>{{story.playnum}}
-                    <i class="glyphicon glyphicon-time" style="margin-left: 30px"></i>{{story.duration}}
+        </div>
+        <div class="weui-tab">
+            <div class="weui-navbar">
+                <div id="tabStar" class="weui-navbar__item weui-bar__item_on" ng-click="tabStar()">
+                    <i class="glyphicon glyphicon-star-empty"></i> 我的收藏
+                </div>
+                <div id="tabSend" class="weui-navbar__item" ng-click="tabSend()">
+                    <i class="glyphicon glyphicon-send"></i> 给孩子的故事
                 </div>
             </div>
-            <div class="col-xs-2">
-                <i ng-click="del(story.id)" class="glyphicon glyphicon-trash"
-                   style="color:#e5e154;font-size: 20px;margin-top: 20px"></i>
+            <div class="weui-tab__panel" ng-if="stories.length==0">
+                <div class="weui-loadmore weui-loadmore_line">
+                    <span class="weui-loadmore__tips">还没有故事呢</span>
+                </div>
             </div>
-        </li>
-    </ul>
+            <div class="weui-tab__panel" ng-if="stories.length!=0">
+                <div ng-if="starState" ng-model="starState" style="margin-top: 10px">
+                    <ul>
+                        <li id="st-{{story.id}}" style="height: 90px;border-bottom:solid #fdf9f4 2px;"
+                            ng-repeat="story in stories" ng-model="stories">
+                            <a href="#/storyDetail/{{story.id}}">
+                                <div class="col-xs-3">
+                                    <img style="height: 70px;margin-top:5px;width: 80px;border: solid #cccccc 2px"
+                                         class="paper-1"
+                                         ng-src="{{story.img}}">
+                                </div>
+                                <div class="col-xs-7" style="text-align: left;margin-top: 10px">
+                                    <div style="font-size: 18px">{{story.name}}</div>
+                                    <div style="margin-top: 10px;color: #c2e593"><i
+                                            class="glyphicon glyphicon-play"></i>{{story.playnum}}
+
+                                        <i ng-if="story.duration" class="glyphicon glyphicon-time"
+                                           style="margin-left: 10px"></i>{{story.duration}}
+
+                                        <i class="glyphicon glyphicon-star" style="margin-left: 10px"></i>{{story.startime}}
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="col-xs-2" ng-click="del(story.id)">
+                                <i class="glyphicon glyphicon-trash"
+                                   style="color:#e5e154;font-size: 20px;margin-top: 20px"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div ng-if="sendState" ng-model="sendState" style="margin-top: 10px">
+                    <ul>
+                        <a href="#/myStoryDetail/{{story.id}}" ng-repeat="story in stories" ng-model="stories">
+                            <li id="st-{{story.id}}" style="height: 90px;border-bottom:solid #fdf9f4 2px;"
+                                ng-repeat="story in stories" ng-model="stories">
+                                <a href="#/myStoryDetail/{{story.id}}/0">
+                                    <div class="col-xs-3">
+                                        <img style="height: 70px;margin-top:5px;width: 80px;border: solid #cccccc 2px"
+                                             class="paper-1"
+                                             ng-src="{{story.img}}">
+                                    </div>
+                                    <div class="col-xs-7" style="text-align: left;margin-top: 10px">
+                                        <div style="font-size: 18px">{{story.name}}</div>
+                                        <div style="margin-top: 10px;color: #c2e593"><i
+                                                class="glyphicon glyphicon-play"></i>{{story.playnum}}
+
+                                            <i ng-if="story.duration" class="glyphicon glyphicon-time"
+                                               style="margin-left: 10px"></i>{{story.duration}}
+
+                                            <i class="glyphicon glyphicon-send" style="margin-left: 10px"></i>{{story.sendtime}}
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="col-xs-2" ng-click="del(story.id)">
+                                    <i class="glyphicon glyphicon-trash"
+                                       style="color:#e5e154;font-size: 20px;margin-top: 20px"></i>
+                                </div>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

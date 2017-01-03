@@ -1,24 +1,30 @@
-<div class="animated fadeInLeft">
-    <h2>全部故事</h2>
+<div>
+    <h2 style="color: #8B0000">给孩子选故事</h2>
     <hr>
-    <ul>
-        <a href="#/storyDetail/{{story.id}}" ng-repeat="story in stories">
-            <li style="height: 90px;border-bottom:solid #fdf9f4 2px;">
+    <div ng-if="stories.length==0" class="weui-loadmore weui-loadmore_line">
+        <span class="weui-loadmore__tips">还没有故事呢</span>
+    </div>
+    <ul ng-if="stories.length!=0">
+        <li style="height: 90px;border-bottom:solid #fdf9f4 2px;" ng-repeat="story in stories">
+            <a href="#/storyDetail/{{story.id}}">
                 <div class="col-xs-3">
                     <img style="height: 70px;margin-top:5px;width: 80px;border: solid #cccccc 2px" class="paper-1"
                          ng-src="{{story.img}}">
                 </div>
                 <div class="col-xs-7" style="text-align: left;margin-top: 10px">
                     <div style="font-size: 18px">{{story.name}}</div>
-                    <div style="margin-top: 10px;color: #c2e593"><i class="glyphicon glyphicon-play"></i>{{story.playnum}} <i
-                            class="glyphicon glyphicon-time" style="margin-left: 30px"></i>{{story.duration}}
+                    <div style="margin-top: 10px;color: #c2e593">
+                        <i class="glyphicon glyphicon-play"></i>{{story.playnum}}
+                        <i ng-if="story.duration" class="glyphicon glyphicon-time" style="margin-left: 30px"></i>{{story.duration}}
                     </div>
                 </div>
-                <div class="col-xs-2">
-                    <i ng-if="story.star==1" class="glyphicon glyphicon-star" style="font-size: 20px;margin-top: 20px;color: #ff6666"></i>
-                    <i ng-if="story.star==0" class="glyphicon glyphicon-star-empty" style="font-size: 20px;margin-top: 20px;color: #CCCCCC"></i>
-                </div>
-            </li>
-        </a>
+            </a>
+            <div class="col-xs-2">
+                <i ng-if="story.star==1" class="glyphicon glyphicon-star"
+                   style="font-size: 20px;margin-top: 20px;color: #ff6666"></i>
+                <i ng-if="story.star==0" ng-click="star(story.id,$index)" class="glyphicon glyphicon-star-empty"
+                   style="font-size: 20px;margin-top: 20px;color: #CCCCCC"></i>
+            </div>
+        </li>
     </ul>
 </div>

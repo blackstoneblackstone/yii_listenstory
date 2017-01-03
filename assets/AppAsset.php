@@ -21,6 +21,10 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+        'js/jquery.ui.widget.js',
+        'js/jquery.iframe-transport.js',
+        'js/jquery.fileupload.js',
+        'js/add-story.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

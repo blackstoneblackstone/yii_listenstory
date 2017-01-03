@@ -69,3 +69,8 @@
         transform: scale(1, 1);
     }
 }
+
+.i-btn {
+    animation: lu 1s infinite linear;
+    -webkit-animation: lu 1s infinite linear;
+}

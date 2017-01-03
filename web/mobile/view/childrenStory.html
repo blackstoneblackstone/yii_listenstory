@@ -1,26 +1,37 @@
-<img src="public/img/topbg.jpg" style="margin-bottom: 10px;width:100%;">
-<a href="#/myStoryDetail/{{story.id}}" ng-repeat="story in stories" ng-model="stories">
-    <li class="paper-1" id="st-{{story.id}}"
-        style="width: 48%;margin-left: 2%;margin-top:20px;float:left;margin-top:5px;height: 300px;margin-right:0px;border-bottom:solid #fdf9f4 5px;">
-        <img style="height: 250px;margin-top:5px;width: 100%;border: solid #F2f2f2 2px" ng-src="{{story.img}}">
-        <div style="font-size: 18px;margin-top: 10px">{{story.name}}
-        </div>
-    </li>
-</a>
+<div class="animated fadeIn" style="min-height: 700px;background-color: #ffffff">
+    <img id="topBg" src="public/img/topbg.jpg" style="margin-bottom: 10px;width: 100%">
+    <div ng-if="stories.length==0" class="weui-loadmore weui-loadmore_line">
+        <span class="weui-loadmore__tips">还没有故事呢</span>
+    </div>
+    <div style="margin-top: 20px">
+        <a href="#/myStoryDetail/{{story.id}}/1" ng-repeat="story in stories" ng-model="stories">
+            <li class="paper-1" id="st-{{story.id}}"
+                style="width: 48%;margin-left: 2%;margin-top:20px;float:left;margin-top:15px;height: 230px;margin-right:0px;border-bottom:solid #fdf9f4 5px;">
+                <img style="height: 180px;margin-top:5px;width: 100%;border: solid #F2f2f2 2px" ng-src="{{story.img}}">
+                <div style="font-size: 18px;margin-top: 10px">{{story.name}}
+                </div>
+            </li>
+        </a>
+    </div>
 
-<div class="js_dialog" id="pwdDialog">
-    <div class="weui-mask"></div>
-    <div class="weui-dialog">
-        <div class="weui-dialog__hd"><strong class="weui-dialog__title">输入密码</strong></div>
-        <div class="weui-dialog__bd">
-            <div class="weui-cell">
-                <div class="weui-cell__bd">
-                    <input id="pwd" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入密码">
+    <div class="js_dialog" id="pwdDialog">
+        <div class="weui-mask" style="background-color: rgba(255,255,255,0)"></div>
+        <div class="weui-dialog" style="max-width: 450px">
+            <div class="weui-dialog__hd">
+                <strong class="weui-dialog__title" style="font-size: 30px">输入妈妈告诉你的密码</strong>
+            </div>
+            <div class="weui-dialog__bd">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <input style="font-size: 20px" id="pwd" class="weui-input" type="number" pattern="[0-9]*"
+                               placeholder="请输入密码">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="weui-dialog__ft">
-            <a href="javascript:;" id="pwdConfirm" class="weui-dialog__btn weui-dialog__btn_primary">听故事啦</a>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" style="margin-top: 20px" id="pwdConfirm"
+                   class="weui-btn weui-btn_primary">听故事啦</a>
+            </div>
         </div>
     </div>
 </div>

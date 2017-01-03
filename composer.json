@@ -21,10 +21,10 @@
   "require": {
     "php": ">=5.4.0",
     "yiisoft/yii2": "~2.0.5",
-    "yiisoft/yii2-bootstrap": "~2.0.0",
     "yiisoft/yii2-swiftmailer": "~2.0.0",
     "callmez/yii2-wechat-sdk": "dev-master",
-    "linslin/yii2-curl":"~1.0.5"
+    "linslin/yii2-curl":"~1.0.5",
+    "phansys/getid3": "2.1.*@dev"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "~2.0.0",

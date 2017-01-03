@@ -19,13 +19,10 @@ i {
     margin: 5px;
 }
 
-.container {
-    margin: 0 10px;
-}
-
 .row {
     background-color: #ffffff;
     font-family: Lantinghei SC, Open Sans, Arial, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeiti, WenQuanYi Micro Hei, SimSun, sans-serif;
+    margin: 0;
 }
 
 a {
@@ -44,23 +41,26 @@ a:hover {
 }
 
 .storyDetail {
-    position: absolute;
     bottom: 80px;
     top: 0;
     left: 15px;
     right: 15px;
-    /*background-color: rgba(253,225,239,0.8);*/
+    min-height: 500px;
 }
-.storyDetail i{
+
+.storyDetail i {
     font-size: 25px;
 }
-hr{
+
+hr {
     margin-top: 0;
 }
-.con{
+
+.con {
     margin-bottom: 80px;
 }
-.paper{
+
+.paper {
     color: rgba(0, 0, 0, 0.870588);
     background-color: #fff;
     transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
@@ -72,7 +72,8 @@ hr{
     text-align: center;
     display: inline-block;
 }
-.paper-1{
+
+.paper-1 {
     color: rgba(0, 0, 0, 0.870588);
     background-color: #fff;
     transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
@@ -84,12 +85,54 @@ hr{
     text-align: center;
     display: inline-block;
 }
-a{
+
+a {
     color: #1a1a1a;
 }
-.banner{
+
+.banner {
     height: 200px;
 }
-.img-bg{
+
+.img-bg {
     background-color: #f2f2f2;
 }
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0
+}
+
+li:hover {
+    animation: lihover 1s linear;
+    -webkit-animation: lihover 1s linear;
+}
+
+@-webkit-keyframes lihover {
+    0% {
+        background-color: #ffffff;
+    }
+    50% {
+        background-color: #fdfb7f;
+    }
+    100% {
+        background-color: #ffffff;
+    }
+}
+
+@keyframes lihover {
+    0% {
+        background-color: #ffffff;
+    }
+    50% {
+        background-color: #fdfb7f;
+    }
+    100% {
+        background-color: #ffffff;
+    }
+}
+
+.weui-navbar__item.weui-bar__item_on {
+    background-color: #ffffff;
+}
+

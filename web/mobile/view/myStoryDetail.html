@@ -1,6 +1,4 @@
-<div class="storyDetail animated fadeInUp">
-
-    <!--<i class="glyphicon glyphicon-align-left" style="color:#e5e154;position: absolute;right: 20px;top:20px;" ng-click="showPlayer()"></i>-->
+<div class="storyDetail animated fadeIn" style="overflow: hidden;">
     <div style="margin-top: 50px;height:300px;background: url('public/img/yybw.png') no-repeat center;background-size: 240px 240px; ">
         <img id="playImg" style="border: solid #cccccc 2px;height: 200px;width:200px;margin-top: 50px;"
              ng-src="{{story.img}}" alt=""
@@ -11,53 +9,69 @@
             <img src="public/img/pause.png" ng-click="pause()" id="btnPause" class="img-bg"
                  style="border-radius:50%;height:80px;margin-left: auto;margin-right: auto;display: none;">
         </div>
+        <a ng-href="{{rightUrl}}" ng-if="story.right!=null"
+           style="position:absolute;top:180px;right: 20px;">
+            <!--<span style="color: #8BC34A;">上一篇</span>-->
+            <i class="glyphicon glyphicon-chevron-right i-btn"
+               style="color: #e5e154;font-size: 30px"></i>
+        </a>
+        <a ng-href="{{leftUrl}}" ng-if="story.left!=null"
+           style="position:absolute;top:180px;left: 20px;">
+            <i ng-href="" class="glyphicon glyphicon-chevron-left i-btn"
+               style="color: #e5e154;font-size: 30px"></i>
+            <!--<span style="color: #8BC34A;"> 下一篇</span>-->
+        </a>
     </div>
-    <div style="margin-bottom: 50px">
-        <label id="sdTime" class="label label-info" ng-model="story.duration">{{story.duration}}</label>
+    <div style="margin-bottom: 30px">
         <div style="font-size: 20px;margin-top: 20px">{{story.name}}</div>
     </div>
-
-    <div id="container">
+    <div style="color: #e5e154;margin-bottom: 20px">
+        <span ng-click="playType()">
+        <i class="glyphicon glyphicon-retweet" id="p1"></i>
+        <br>
+        <span id="p2" style="color: #8BC34A">
+        单曲循环
+        </span>
+       </span>
+        <!--<span>-->
+        <!--<i class="glyphicon glyphicon-arrow-right"></i>-->
+        <!--<br>-->
+        <!--单曲循环-->
+        <!--</span>-->
+    </div>
+    <div id="container" class="animated fadeIn" style="display: none">
         <section id="content_main">
             <article>
-                <div id="jquery_jplayer_1" class="jp-jplayer" style="width: 0px; height: 0px;"><img id="jp_poster_0"
-                                                                                                    style="width: 0px; height: 0px; display: none;">
-                    <audio id="jp_audio_0" preload="metadata"></audio>
+                <div id="jquery_jplayer_1" class="jp-jplayer" style="width: 0px; height: 0px;">
                 </div>
                 <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
                     <div class="jp-type-single">
                         <div class="jp-gui jp-interface">
                             <div class="jp-volume-controls">
-                                <button class="jp-mute" role="button" tabindex="0">mute</button>
-                                <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
                                 <div class="jp-volume-bar">
                                     <div class="jp-volume-bar-value" style="width: 80%;"></div>
                                 </div>
                             </div>
                             <div class="jp-controls-holder">
-                                <div class="jp-controls">
-                                    <button class="jp-play" role="button" tabindex="0">play</button>
-                                    <button class="jp-stop" role="button" tabindex="0">stop</button>
-                                </div>
                                 <div class="jp-progress">
-                                    <div class="jp-seek-bar" style="height:10px;background-color: #ffffff;width: 100%;">
-                                        <div class="jp-play-bar" style="height:8px;background-color: #ff6666;width: 26.1889%;"></div>
+                                    <div class="jp-seek-bar" style="height:10px;background-color: #fdf9f4;width: 100%;">
+                                        <div class="jp-play-bar"
+                                             style="height:8px;background-color: #ffeb3b;width: 26.1889%;"></div>
                                     </div>
                                 </div>
-                                <div class="jp-current-time" role="timer" aria-label="time">00:54</div>
-                                <div class="jp-duration" role="timer" aria-label="duration">-02:32</div>
-                                <div class="jp-toggles">
-                                    <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+                                <div class="jp-current-time label label-info" style="float: left;font-size: 16px;"
+                                     role="timer"
+                                     aria-label="time">00:54
+                                </div>
+                                <div class="jp-duration label label-success" role="timer"
+                                     style="float: right;font-size: 16px;"
+                                     aria-label="duration">
+                                    -02:32
                                 </div>
                             </div>
                         </div>
-                        <div class="jp-details">
-                            <div class="jp-title" aria-label="title">test1或者小城大事</div>
-                        </div>
                         <div class="jp-no-solution" style="display: none;">
-                            <span>没有</span>
-                            To play the media you will need to either update your browser to a recent version or update your
-                            <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                            <span>不支持音频播放</span>
                         </div>
                     </div>
                 </div>
@@ -65,7 +79,8 @@
         </section>
     </div>
 
-    <div class="alert alert-success animated fadeInUpBig" id="sayText1" style="margin-left:20%;width:60%;display: none">
+    <div class="alert alert-success animated fadeInUpBig" id="sayText1"
+         style="margin-top:20px;margin-left:20%;width:60%;display: none">
         故事开头,妈妈想对你说...
     </div>
     <div class="alert alert-info animated fadeInUpBig" id="sayText2" style="margin-left:20%;width:60%;display: none">

@@ -12,7 +12,7 @@ class StoryController extends ActiveController
 
     public function actionStories($openid)
     {
-        $stories = Story::find()->all();
+        $stories = Story::find()->orderBy("time DESC")->all();
         $ss=array();
         foreach ($stories as $story) {
             $s = MyStory::findOne(array('storyid' => ($story->id),'openid'=>$openid));

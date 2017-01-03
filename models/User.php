@@ -13,8 +13,8 @@ class User extends \yii\db\ActiveRecord
     private static $users = [
         '100' => [
             'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
+            'username' => 'plh',
+            'password' => 'plh123456',
             'authKey' => 'test100key',
             'accessToken' => '100-token',
         ],

@@ -6,6 +6,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+
 $this->title = '登录';
 ?>
 <div class="site-login">
@@ -40,8 +41,6 @@ $this->title = '登录';
     </div>
 
     <?php ActiveForm::end(); ?>
-
     <div class="col-lg-offset-1" style="color:#999;">
-
     </div>
 </div>

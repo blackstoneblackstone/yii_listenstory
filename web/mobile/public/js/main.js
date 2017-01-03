@@ -1,6 +1,7 @@
 /**
  * Created by lihb on 12/15/16.
  */
+
 var audioMain = $("#audioMain");
 var motherApp = angular.module("mother", ['ngRoute', 'ngAnimate']);
 
@@ -15,12 +16,15 @@ motherApp.config(['$routeProvider',
         }).when('/storyDetail/:id', {
             templateUrl: 'view/storyDetail.html',
             controller: 'StoryDetailController'
-        }).when('/myStoryDetail/:id', {
+        }).when('/myStoryDetail/:id/:source', {
             templateUrl: 'view/myStoryDetail.html',
             controller: 'MyStoryDetailController'
         }).when('/childrenStory', {
             templateUrl: 'view/childrenStory.html',
             controller: 'ChildrenStoryController'
+        }).when('/newUser', {
+            templateUrl: 'view/newUser.html',
+            controller: 'NewUserController'
         }).otherwise({
             redirectTo: '/error'
         });
@@ -52,7 +56,7 @@ var $loadingToast = $("#loadingToast");
 function dialog(text) {
     $("#dialog .text").html(text);
     $("#dialog").show();
-    $("#confirmBtn").on('tap',function () {
+    $("#confirmBtn").on('click',function () {
         $("#dialog").hide();
     })
 }
